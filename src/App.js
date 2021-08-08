@@ -1,24 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { useState } from "react";
+import { BrowserRouter as Router, Switch, Route,  } from "react-router-dom";
+import "bootstrap/dist/css/bootstrap.min.css";
+import Header from "./Components/Header";
+import Backdrop from "./Components/Backdrop";
+import SideDrawer from "./Components/SideDrawer";
+import Episodes from "./Screens/Episodes";
+import Blog from "./Screens/Blog";
+import About from "./Screens/About";
+import Detail from "./Screens/Detail";
 
 function App() {
+  const [sideToggle, setSideToggle] = useState(false);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className="App">
+        <Header click={() => setSideToggle(true)} />
+        <Backdrop show={sideToggle} click={() => setSideToggle(false)} />
+        <SideDrawer show={sideToggle} click={() => setSideToggle(false)} />
+        <div className='container mt-3'>
+        <Switch>
+          <Route exact path="/" component={Episodes} />
+          <Route path="/blog" component={Blog} />
+          <Route path="/about" component={About} />
+          <Route path="/episode/:id" component={Detail} />
+        </Switch>
+
+        </div>
+      </div>
+    </Router>
   );
 }
 
