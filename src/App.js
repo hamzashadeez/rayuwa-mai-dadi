@@ -9,6 +9,7 @@ import Episodes from "./Screens/Episodes";
 import Blog from "./Screens/Blog";
 import About from "./Screens/About";
 import Detail from "./Screens/Detail";
+import Admin from "./Screens/Admin";
 
 function App() {
   const [sideToggle, setSideToggle] = useState(false);
@@ -23,7 +24,9 @@ function App() {
           <Route exact path="/" component={Episodes} />
           <Route path="/blog" component={Blog} />
           <Route path="/about" component={About} />
+          <Route path="/admin123" component={Admin} />
           <Route path="/episode/:id" component={Detail} />
+
         </Switch>
 
         </div>

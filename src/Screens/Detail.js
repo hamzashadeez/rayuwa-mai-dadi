@@ -1,29 +1,20 @@
-import React, {useEffect, useRef} from "react";
-import { useHistory, useParams } from "react-router-dom";
-import ReactHowler from 'react-howler'
+import React, {useEffect} from "react";
+import {  useParams, Link } from "react-router-dom";
 
-function Detail() {
-  const { id } = useParams();
+function Detail(props) {
+  const { data, id } = (props.location && props.location.state) || {};
 
- 
+ console.log(data)
 
   return (
     <div>
-      <div className="p-3 bg-white mt-2 shadow-sm">
-      <ReactHowler
-        src='http://goldfirestudios.com/proj/howlerjs/sound.ogg'
-        playing={true}
-      />
+      <div className="p-3 bg-white mt-2 d-flex align-center justify-content-around shadow-sm">
+        <a href={data?.source} className='btn btn-dark' >Listen</a>
+        <a href={data?.source} className='btn btn-success '>Download</a>
       </div>
       <div className="p-3 bg-white mt-4 shadow-sm">
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat. Duis aute irure dolor in
-          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-          culpa qui officia deserunt mollit anim id est laborum
+          {data?.desc}
         </p>
       </div>
     </div>
