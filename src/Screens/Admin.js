@@ -66,7 +66,8 @@ function Admin() {
                 desc,
                 source: url,
                 length,
-                date: today
+                date: today,
+                downloads: 0
               });
 
               setPassword("");

@@ -1,0 +1,44 @@
+.main__btns {
+  background-image: url(../assets/bg.jpg);
+  background-size: cover;
+  background-position: center;
+  padding: 50px 0px;
+}
+
+@keyframes example {
+    0%   {background-color: red;}
+    25%  {background-color: teal;}
+    50%  {background-color: skyblue;}
+    100% {background-color: seagreen;}
+  }
+
+@keyframes example2 {
+    0%   {background-color: orange;}
+    25%  {background-color: sienna;}
+    50%  {background-color: rebeccapurple;}
+    100% {background-color: indianred;}
+  }
+  
+.btn-one {
+  animation-name: example;
+  animation-duration: 4s;
+  color: white;
+  width: 120px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation-iteration-count: infinite;
+}
+  
+.btn-one2 {
+  animation-name: example2;
+  animation-duration: 4s;
+  color: white;
+  width: 120px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation-iteration-count: infinite;
+}
