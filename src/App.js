@@ -20,13 +20,13 @@ function App() {
         <Backdrop show={sideToggle} click={() => setSideToggle(false)} />
         <SideDrawer show={sideToggle} click={() => setSideToggle(false)} />
         <div className='container mt-3'>
+          <h1 className='mb-4 mt-2'>.</h1>
         <Switch>
           <Route exact path="/" component={Episodes} />
           <Route path="/blog" component={Blog} />
           <Route path="/about" component={About} />
           <Route path="/admin123" component={Admin} />
           <Route path="/episode/:id" component={Detail} />
-
         </Switch>
 
         </div>

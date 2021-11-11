@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Episode from "../Components/Episode";
+import Hamza from "../Components/Hamza";
 import { db } from "../Config/Firebase";
 import './episode.css'
 
@@ -32,6 +33,7 @@ function Episodes() {
         </div>
       ) : (
         <div>
+          <Hamza />
           {episodes.map((epi) => (
             <Episode key={epi.id} data={epi.data} id={epi.id} />
           ))}
